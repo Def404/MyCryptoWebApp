@@ -32,7 +32,7 @@ public class CryptService : ICryptService
         return result;
     }
 
-    public string Encrypted(string openText)
+    public async Task<string> Encrypted(string openText)
     {
         var encryptedText = "";
 
@@ -77,7 +77,7 @@ public class CryptService : ICryptService
         return encryptedText;
     }
 
-    public string Decrypted(string encryptText)
+    public async Task<string> Decrypted(string encryptText)
     {
         var decryptText = "";
         

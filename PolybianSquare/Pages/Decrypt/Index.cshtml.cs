@@ -26,7 +26,7 @@ public class Index : PageModel
         if (EncryptedText == null)
             return Page();
         
-        DecryptedText = _cryptService.Decrypted(EncryptedText);
+        DecryptedText = await _cryptService.Decrypted(EncryptedText);
         return Page();
     }
 }

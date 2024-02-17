@@ -3,7 +3,7 @@
 public interface ICryptService
 {
     char[,] InitSquare();
-    string Encrypted(string openText);
+    Task<string> Encrypted(string openText);
 
-    string Decrypted(string encryptText);
+    Task<string> Decrypted(string encryptText);
 }

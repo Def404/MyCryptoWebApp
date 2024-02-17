@@ -24,7 +24,7 @@ public class Index : PageModel
         if (OpenText == null) 
             return Page();
         
-        EncryptedText = _cryptService.Encrypted(OpenText);
+        EncryptedText = await _cryptService.Encrypted(OpenText);
         return Page();
 
     }
