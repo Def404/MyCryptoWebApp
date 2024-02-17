@@ -25,7 +25,7 @@ public class CryptService : ICryptService
     /// <summary>
     /// Получаем двухмерный масив (квадрат) из исходного алфавита
     /// </summary>
-    public char[,] InitSquare()
+    private char[,] InitSquare()
     {
         var result = new char[8, 8];
 
