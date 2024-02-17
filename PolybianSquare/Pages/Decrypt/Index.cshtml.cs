@@ -23,6 +23,9 @@ public class Index : PageModel
 
     public async Task<IActionResult> OnPostAsync()
     {
+        if (EncryptedText == null)
+            return Page();
+        
         DecryptedText = _cryptService.Decrypted(EncryptedText);
         return Page();
     }
