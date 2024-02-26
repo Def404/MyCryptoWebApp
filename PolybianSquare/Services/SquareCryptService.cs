@@ -1,6 +1,6 @@
 ﻿namespace PolybianSquare.Services;
 
-public class CryptService : ICryptService
+public class SquareCryptService : ISquareCryptService
 {
     /// <summary>
     /// Исходный алфавит (символы перемешаны)
@@ -17,7 +17,7 @@ public class CryptService : ICryptService
     /// </summary>
     private readonly char[,] _polybianSquare;
 
-    public CryptService()
+    public SquareCryptService()
     {
         _polybianSquare = InitSquare();
     }

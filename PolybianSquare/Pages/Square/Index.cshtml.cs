@@ -6,11 +6,11 @@ namespace PolybianSquare.Pages.Square;
 
 public class Index : PageModel
 {
-    private ICryptService _cryptService;
+    private ISquareCryptService _squareCryptService;
 
-    public Index(ICryptService cryptService)
+    public Index(ISquareCryptService squareCryptService)
     {
-        _cryptService = cryptService;
+        _squareCryptService = squareCryptService;
     }
 
     [BindProperty] public string? OpenText { get; set; }
@@ -29,7 +29,7 @@ public class Index : PageModel
         if (OpenText == null)
             return Page();
 
-        EncryptedText = await _cryptService.Encrypted(OpenText);
+        EncryptedText = await _squareCryptService.Encrypted(OpenText);
         return Page();
     }
 
@@ -38,7 +38,7 @@ public class Index : PageModel
         if (EncryptedMyText == null)
             return Page();
 
-        DecryptedText = await _cryptService.Decrypted(EncryptedMyText);
+        DecryptedText = await _squareCryptService.Decrypted(EncryptedMyText);
         return Page();
     }
 }

@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-builder.Services.AddTransient<ICryptService, CryptService>();
+builder.Services.AddTransient<ISquareCryptService, SquareCryptService>();
 
 var app = builder.Build();
 
