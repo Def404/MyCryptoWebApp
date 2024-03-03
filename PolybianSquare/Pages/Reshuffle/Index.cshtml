@@ -1,0 +1,58 @@
+﻿@page
+@model PolybianSquare.Pages.Reshuffle.Index
+
+@{
+    ViewData["Title"] = "Перестановка по таблице";
+    Layout = "Shared/_Layout";
+}
+
+<h1 class="mb-5">Метод перестановки по таблице</h1>
+<h2 class="mb-3">Сервис по получению шифрованного сообщения</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" asp-antiforgery="true" asp-page-handler="Encrypt">
+                    <label class="fs-6 form-label fw-bolder text-dark">Введите текст:</label>
+                    <input type="text" asp-for="OpenText" class="form-control mb-4"/>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h3>Зашифрованный текст</h3>
+                <div class="text-center">
+                    @Model.EncryptedText
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="mb-3">Сервис по получению расшифрованного сообщения</h2>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <form method="post" asp-antiforgery="true" asp-page-handler="Decrypt">
+                    <label class="fs-6 form-label fw-bolder text-dark">Введите зашифрованный текст:</label>
+                    <input type="text" asp-for="EncryptedMyText" class="form-control mb-4"/>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h3>Расшифрованный текст</h3>
+                <div class="text-center">
+                    @Model.DecryptedText
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
