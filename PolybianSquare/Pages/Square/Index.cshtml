@@ -2,14 +2,15 @@
 @model PolybianSquare.Pages.Square.Index
 
 @{
-    ViewData["Title"] = "";
+    ViewData["Title"] = "Полибианский квадрат";
     Layout = "Shared/_Layout";
 }
 
-<h1 class="mb-3">Сервис по получению шифрованного сообщения</h1>
-<div class="row">
+<h2 class="mb-2">Полибианский квадрат</h2>
+<div class="row mb-2">
     <div class="col-md-6">
         <div class="card">
+            <h3 class="card-header">Шифрование текста</h3>
             <div class="card-body">
                 <form method="post" asp-antiforgery="true" asp-page-handler="Encrypt">
                     <label class="fs-6 form-label fw-bolder text-dark">Введите текст:</label>
@@ -21,8 +22,8 @@
     </div>
     <div class="col-md-6">
         <div class="card">
+            <h3 class="card-header">Зашифрованный текст</h3>
             <div class="card-body">
-                <h3>Зашифрованный текст</h3>
                 <div class="text-center">
                     @Model.EncryptedText
                 </div>
@@ -30,11 +31,10 @@
         </div>
     </div>
 </div>
-
-<h1 class="mb-3">Сервис по получению расшифрованного сообщения</h1>
-<div class="row">
+<div class="row mb-2">
     <div class="col-md-6">
         <div class="card">
+            <h3 class="card-header">Расшифрование текста</h3>
             <div class="card-body">
                 <form method="post" asp-antiforgery="true" asp-page-handler="Decrypt">
                     <label class="fs-6 form-label fw-bolder text-dark">Введите зашифрованный текст:</label>
@@ -46,8 +46,8 @@
     </div>
     <div class="col-md-6">
         <div class="card">
+            <h3 class="card-header">Расшифрованный текст</h3>
             <div class="card-body">
-                <h3>Расшифрованный текст</h3>
                 <div class="text-center">
                     @Model.DecryptedText
                 </div>
