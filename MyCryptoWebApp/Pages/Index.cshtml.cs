@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace PolybianSquare.Pages;
+namespace MyCryptoWebApp.Pages;
 
 public class IndexModel : PageModel
 {

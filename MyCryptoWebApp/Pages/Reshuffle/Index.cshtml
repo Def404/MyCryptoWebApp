@@ -1,15 +1,17 @@
 ﻿@page
-@model PolybianSquare.Pages.Square.Index
+@using Microsoft.AspNetCore.Html
+@model MyCryptoWebApp.Pages.Reshuffle.Index
 
 @{
-    ViewData["Title"] = "";
+    ViewData["Title"] = "Перестановка по таблице";
     Layout = "Shared/_Layout";
 }
 
-<h1 class="mb-3">Сервис по получению шифрованного сообщения</h1>
+<h2 class="mb-2">Метод перестановки по таблице</h2>
 <div class="row">
     <div class="col-md-6">
         <div class="card">
+            <h3 class="card-header">Шифрование текста</h3>
             <div class="card-body">
                 <form method="post" asp-antiforgery="true" asp-page-handler="Encrypt">
                     <label class="fs-6 form-label fw-bolder text-dark">Введите текст:</label>
@@ -21,20 +23,19 @@
     </div>
     <div class="col-md-6">
         <div class="card">
+            <h3 class="card-header">Зашифрованный текст</h3>
             <div class="card-body">
-                <h3>Зашифрованный текст</h3>
                 <div class="text-center">
-                    @Model.EncryptedText
+                    <pre>@Model.EncryptedText</pre>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-<h1 class="mb-3">Сервис по получению расшифрованного сообщения</h1>
 <div class="row">
     <div class="col-md-6">
         <div class="card">
+            <h3 class="card-header">Расшифрование текста</h3>
             <div class="card-body">
                 <form method="post" asp-antiforgery="true" asp-page-handler="Decrypt">
                     <label class="fs-6 form-label fw-bolder text-dark">Введите зашифрованный текст:</label>
@@ -46,10 +47,10 @@
     </div>
     <div class="col-md-6">
         <div class="card">
+            <h3 class="card-header">Расшифрованный текст</h3>
             <div class="card-body">
-                <h3>Расшифрованный текст</h3>
                 <div class="text-center">
-                    @Model.DecryptedText
+                    <pre>@Model.DecryptedText</pre>
                 </div>
             </div>
         </div>

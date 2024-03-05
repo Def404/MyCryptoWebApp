@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PolybianSquare.Services;
+using MyCryptoWebApp.Services;
 
-namespace PolybianSquare.Pages.Square;
+namespace MyCryptoWebApp.Pages.Square;
 
 public class Index : PageModel
 {
@@ -29,7 +29,7 @@ public class Index : PageModel
         if (OpenText == null)
             return Page();
 
-        EncryptedText = await _squareCryptService.Encrypted(OpenText);
+        EncryptedText = await _squareCryptService.Encrypted(OpenText.Trim().ToLower());
         return Page();
     }
 
@@ -38,7 +38,7 @@ public class Index : PageModel
         if (EncryptedMyText == null)
             return Page();
 
-        DecryptedText = await _squareCryptService.Decrypted(EncryptedMyText);
+        DecryptedText = await _squareCryptService.Decrypted(EncryptedMyText.Trim().ToLower());
         return Page();
     }
 }
