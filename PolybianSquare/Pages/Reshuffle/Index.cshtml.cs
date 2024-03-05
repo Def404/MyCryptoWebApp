@@ -37,7 +37,7 @@ public class Index : PageModel
 		if (EncryptedMyText == null)
 			return Page();
 
-		DecryptedText = await _reshuffleCryptService.Decrypted(EncryptedMyText.Trim().ToLower());
+		DecryptedText = await _reshuffleCryptService.Decrypted(EncryptedMyText);
 		
 		return Page();
 	}
