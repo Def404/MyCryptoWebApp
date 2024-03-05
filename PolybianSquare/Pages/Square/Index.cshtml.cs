@@ -38,7 +38,7 @@ public class Index : PageModel
         if (EncryptedMyText == null)
             return Page();
 
-        DecryptedText = await _squareCryptService.Decrypted(EncryptedMyText);
+        DecryptedText = await _squareCryptService.Decrypted(EncryptedMyText.Trim().ToLower());
         return Page();
     }
 }
