@@ -29,7 +29,7 @@ public class Index : PageModel
         if (OpenText == null)
             return Page();
 
-        EncryptedText = await _squareCryptService.Encrypted(OpenText);
+        EncryptedText = await _squareCryptService.Encrypted(OpenText.Trim().ToLower());
         return Page();
     }
 
