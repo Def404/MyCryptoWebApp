@@ -8,24 +8,8 @@ public class ReshuffleCryptService : IReshuffleCryptService
 
 		var openTextLength = openText.Length;
 		var divisors = Divisors(openTextLength);
-
-		var divId = 0;
-		var a = 0;
-		var b = 0;
-
-		if (divisors.Count % 2 == 0)
-		{
-			divId = (divisors.Count / 2) - 1;
-
-			a = divisors[divId];
-			b = divisors[divisors.Count - 1 - divId];
-		}
-		else
-		{
-			divId = divisors.Count / 2;
-			a = divisors[divId];
-			b = divisors[divId];
-		}
+		
+		GetSidesOfTable(divisors, out int  a, out int b);
 
 		if (a * b > openTextLength)
 		{
@@ -73,23 +57,7 @@ public class ReshuffleCryptService : IReshuffleCryptService
 		var encryptTextLength = encryptText.Length;
 		var divisors = Divisors(encryptTextLength);
 		
-		var divId = 0;
-		var a = 0;
-		var b = 0;
-
-		if (divisors.Count % 2 == 0)
-		{
-			divId = (divisors.Count / 2) - 1;
-
-			a = divisors[divId];
-			b = divisors[divisors.Count - 1 - divId];
-		}
-		else
-		{
-			divId = divisors.Count / 2;
-			a = divisors[divId];
-			b = divisors[divId];
-		}
+		GetSidesOfTable(divisors, out int  a, out int b);
 
 		if (a * b > encryptTextLength)
 		{
@@ -133,7 +101,7 @@ public class ReshuffleCryptService : IReshuffleCryptService
 		return decryptText.Trim();
 	}
 
-	private static List<int> Divisors(int n)
+	private List<int> Divisors(int n)
 	{
 		var divisors = new List<int>();
 
@@ -158,5 +126,23 @@ public class ReshuffleCryptService : IReshuffleCryptService
 
 
 		return divisors;
+	}
+
+	private void GetSidesOfTable(List<int> divisors, out int a, out int b)
+	{
+		var divId = 0;
+		if (divisors.Count % 2 == 0)
+		{
+			divId = (divisors.Count / 2) - 1;
+
+			a = divisors[divId];
+			b = divisors[divisors.Count - 1 - divId];
+		}
+		else
+		{
+			divId = divisors.Count / 2;
+			a = divisors[divId];
+			b = divisors[divId];
+		}	
 	}
 }
