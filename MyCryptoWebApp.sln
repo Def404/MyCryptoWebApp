@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolybianSquare", "PolybianSquare\PolybianSquare.csproj", "{49CDC6C4-ADD5-4CCC-BB82-4642E8963EE6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCryptoWebApp", "MyCryptoWebApp\MyCryptoWebApp.csproj", "{49CDC6C4-ADD5-4CCC-BB82-4642E8963EE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

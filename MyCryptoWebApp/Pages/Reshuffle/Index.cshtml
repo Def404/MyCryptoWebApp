@@ -1,13 +1,14 @@
 ﻿@page
-@model PolybianSquare.Pages.Square.Index
+@using Microsoft.AspNetCore.Html
+@model MyCryptoWebApp.Pages.Reshuffle.Index
 
 @{
-    ViewData["Title"] = "Полибианский квадрат";
+    ViewData["Title"] = "Перестановка по таблице";
     Layout = "Shared/_Layout";
 }
 
-<h2 class="mb-2">Полибианский квадрат</h2>
-<div class="row mb-2">
+<h2 class="mb-2">Метод перестановки по таблице</h2>
+<div class="row">
     <div class="col-md-6">
         <div class="card">
             <h3 class="card-header">Шифрование текста</h3>
@@ -31,7 +32,7 @@
         </div>
     </div>
 </div>
-<div class="row mb-2">
+<div class="row">
     <div class="col-md-6">
         <div class="card">
             <h3 class="card-header">Расшифрование текста</h3>

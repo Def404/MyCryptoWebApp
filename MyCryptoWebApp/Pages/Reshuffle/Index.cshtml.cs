@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using PolybianSquare.Services;
+using MyCryptoWebApp.Services;
 
-namespace PolybianSquare.Pages.Reshuffle;
+namespace MyCryptoWebApp.Pages.Reshuffle;
 
 public class Index : PageModel
 {

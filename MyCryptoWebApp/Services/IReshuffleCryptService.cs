@@ -1,4 +1,4 @@
-﻿namespace PolybianSquare.Services;
+﻿namespace MyCryptoWebApp.Services;
 
 public interface IReshuffleCryptService
 {
