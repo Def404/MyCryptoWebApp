@@ -6,6 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddTransient<ISquareCryptService, SquareCryptService>();
+builder.Services.AddTransient<IReshuffleCryptService, ReshuffleCryptService>();
 
 var app = builder.Build();
 
