@@ -1,0 +1,9 @@
+﻿services:
+  mycryptowebapp:
+    container_name: mycryptowebapp
+    image: mycryptowebapp
+    build:
+      context: .
+      dockerfile: MyCryptoWebApp/Dockerfile
+    ports:
+      - "5000:80"
